@@ -3,9 +3,14 @@ title: '弱配准双光图像中的对比学习：对齐语义，而不是强求
 date: 2026-05-11T10:30:00+08:00
 draft: false
 tags: ['对比学习', 'RGB-IR', '弱配准', '多模态融合']
-categories: ['Research']
+categories: ['对比学习与弱配准']
 summary: '梳理红外/可见光弱配准条件下的 Patch-level 与事件级对比学习，用语义一致性约束双模态融合。'
 math: true
+ShowToc: true
+TocOpen: true
+cover:
+  image: 'images/cover-contrast.png'
+  alt: '跨模态对比学习封面图'
 ---
 
 红外/可见光融合里经常有一个隐含假设：两张图是严格对齐的。但在无人机平台上，这个假设很脆。飞行抖动、云台角度差、传感器安装基线、焦距差异和滚动快门都会让双光图像只具备弱配准关系。
@@ -18,53 +23,43 @@ math: true
 
 设编码器输出：
 
-$$
+\[
 H^v,H^h\in\mathbb R^{N_p\times d}.
-$$
+\]
 
 如果直接融合，模型要同时处理模态差异、空间错位和任务监督，学习压力很大。因此可以在融合前加入共享语义投影：
 
-$$
+\[
 \tilde H^v=P_v(H^v),\qquad \tilde H^h=P_h(H^h).
-$$
+\]
 
 目标是让二者进入一个更可比较的语义空间。
 
 ## 事件级 InfoNCE
 
-最直接的方式是做事件级对比学习。对一个 batch 中第 $i$ 个样本，双模态全局向量可以写成：
+最直接的方式是做事件级对比学习。对一个 batch 中第 \(i\) 个样本，双模态全局向量可以写成：
 
-$$
-z_i^v=g_v(\operatorname{GAP}(\bar H_i^v)),\qquad
-z_i^h=g_h(\operatorname{GAP}(\bar H_i^h)).
-$$
+\[
+z_i^v=g_v(\operatorname{GAP}(\bar H_i^v)),\qquad z_i^h=g_h(\operatorname{GAP}(\bar H_i^h)).
+\]
 
-其中 $\bar H$ 是经过初步门控或对齐后的特征。正样本对是同一事件的可见光与红外：
+其中 \(\bar H\) 是经过初步门控或对齐后的特征。正样本对是同一事件的可见光与红外：
 
-$$
+\[
 (z_i^v,z_i^h).
-$$
+\]
 
 负样本来自 batch 中其他事件：
 
-$$
+\[
 (z_i^v,z_j^h),\quad j\neq i.
-$$
+\]
 
 双向 InfoNCE 可以写成：
 
-$$
-\mathcal L_{\text{con}}
-=
--\frac{1}{B}\sum_{i=1}^{B}
-\left[
-\log\frac{\exp(\operatorname{sim}(z_i^v,z_i^h)/\tau_c)}
-{\sum_{j=1}^{B}\exp(\operatorname{sim}(z_i^v,z_j^h)/\tau_c)}
-+
-\log\frac{\exp(\operatorname{sim}(z_i^h,z_i^v)/\tau_c)}
-{\sum_{j=1}^{B}\exp(\operatorname{sim}(z_i^h,z_j^v)/\tau_c)}
-\right].
-$$
+\[
+\mathcal L_{\text{con}} = -\frac{1}{B}\sum_{i=1}^{B} \left[ \log\frac{\exp(\operatorname{sim}(z_i^v,z_i^h)/\tau_c)} {\sum_{j=1}^{B}\exp(\operatorname{sim}(z_i^v,z_j^h)/\tau_c)} + \log\frac{\exp(\operatorname{sim}(z_i^h,z_i^v)/\tau_c)} {\sum_{j=1}^{B}\exp(\operatorname{sim}(z_i^h,z_j^v)/\tau_c)} \right].
+\]
 
 这个损失能让同一事件的双模态全局语义靠近。它适合场景级识别、目标检测前的语义对齐，以及多节点协同中的事件表示压缩。
 
@@ -74,35 +69,27 @@ $$
 
 如果双光图像大致对齐，可以将相同空间位置的 patch 作为正样本：
 
-$$
+\[
 (\tilde h_{i,p}^v,\tilde h_{i,p}^h),
-$$
+\]
 
 不同位置或不同样本作为负样本：
 
-$$
+\[
 (\tilde h_{i,p}^v,\tilde h_{j,q}^h),\quad (i,p)\neq(j,q).
-$$
+\]
 
 对应损失为：
 
-$$
-\mathcal L_{\text{patch}}
-=
--\frac{1}{BN_p}\sum_{i=1}^{B}\sum_{p=1}^{N_p}
-\log
-\frac{
-\exp(\operatorname{sim}(\tilde h_{i,p}^{v},\tilde h_{i,p}^{h})/\tau_p)
-}{
-\sum_{j,q}\exp(\operatorname{sim}(\tilde h_{i,p}^{v},\tilde h_{j,q}^{h})/\tau_p)
-}.
-$$
+\[
+\mathcal L_{\text{patch}} = -\frac{1}{BN_p}\sum_{i=1}^{B}\sum_{p=1}^{N_p} \log \frac{ \exp(\operatorname{sim}(\tilde h_{i,p}^{v},\tilde h_{i,p}^{h})/\tau_p) }{ \sum_{j,q}\exp(\operatorname{sim}(\tilde h_{i,p}^{v},\tilde h_{j,q}^{h})/\tau_p) }.
+\]
 
 如果存在明显弱配准，正样本不应该只取同一坐标，而可以取一个局部邻域：
 
-$$
+\[
 q\in\mathcal N(p).
-$$
+\]
 
 这能容忍小范围偏移，避免把真实对应区域误当负样本。
 
@@ -118,15 +105,13 @@ $$
 
 因此可以用质量分数调节对比损失：
 
-$$
+\[
 w_i=\frac{q_i^v+q_i^h}{2},
-$$
+\]
 
-$$
-\mathcal L_{\text{con}}^{q}
-=
-\frac{1}{B}\sum_i w_i \mathcal L_{\text{con}}^{(i)}.
-$$
+\[
+\mathcal L_{\text{con}}^{q} = \frac{1}{B}\sum_i w_i \mathcal L_{\text{con}}^{(i)}.
+\]
 
 更进一步，如果某一模态质量低到阈值以下，可以只保留任务损失，不强制对齐。
 

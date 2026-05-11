@@ -1,0 +1,37 @@
+{{- define "main" }}
+<section class="research-page">
+  <header class="research-head">
+    <p class="lab-kicker">Research map</p>
+    <h1>{{ .Title }}</h1>
+    <p>按研究方向整理无人机多模态感知、视觉状态空间模型、弱配准对齐与协同计算笔记。</p>
+  </header>
+
+  {{- $areas := slice
+    (dict "title" "Mamba 与视觉状态空间" "desc" "选择性状态空间、Vision Mamba、多方向扫描与端侧高分辨率感知。" "url" "/categories/mamba-与视觉状态空间/" "accent" "cyan")
+    (dict "title" "多模态融合" "desc" "红外/可见光互补、交叉选择性扫描、质量感知门控融合。" "url" "/categories/多模态融合/" "accent" "amber")
+    (dict "title" "对比学习与弱配准" "desc" "Patch-level 对比学习、跨模态语义对齐与无人机双光弱配准。" "url" "/categories/对比学习与弱配准/" "accent" "cyan")
+    (dict "title" "协同计算与调度" "desc" "多无人机任务卸载、时延能耗建模、Lyapunov 在线调度。" "url" "/categories/协同计算与调度/" "accent" "amber")
+  -}}
+
+  <div class="research-grid">
+    {{- range $areas }}
+    <a class="research-card research-card--{{ .accent }}" href="{{ .url | relURL }}">
+      <span>{{ .title }}</span>
+      <p>{{ .desc }}</p>
+    </a>
+    {{- end }}
+  </div>
+
+  <section class="research-latest">
+    <h2>最新文章</h2>
+    <div class="research-list">
+      {{- range first 8 (where site.RegularPages "Section" "posts") }}
+      <a href="{{ .RelPermalink }}">
+        <strong>{{ .Title }}</strong>
+        <span>{{ with index .Params.categories 0 }}{{ . }}{{ end }} · {{ .Date.Format "2006-01-02" }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+</section>
+{{- end }}

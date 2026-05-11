@@ -1,6 +1,12 @@
 # jiulics
 
-本地源码保存在当前目录，使用 Hugo 和 PaperMod 主题构建，并通过 GitHub Actions 部署到 GitHub Pages。
+Hugo + PaperMod 搭建的研究型博客，源码在当前目录，线上地址：
+
+```text
+https://jiulics.github.io/
+```
+
+站内维护手册：`https://jiulics.github.io/guide/blog-publishing/`
 
 ## 本地预览
 
@@ -8,7 +14,11 @@
 .\.tools\hugo\hugo.exe server -D
 ```
 
-打开 Hugo 输出的本地地址，通常是 `http://localhost:1313/`。
+通常打开：
+
+```text
+http://localhost:1313/
+```
 
 ## 新建文章
 
@@ -16,16 +26,64 @@
 .\.tools\hugo\hugo.exe new content posts/my-post.md
 ```
 
-把文章头部的 `draft` 改成 `false` 后，推送到 GitHub 即可发布。
+正式发布时，front matter 至少包含：
 
-## 部署到 GitHub Pages
+```yaml
+---
+title: '文章标题'
+date: 2026-05-11T12:00:00+08:00
+draft: false
+tags: ['Mamba', '无人机']
+categories: ['Mamba 与视觉状态空间']
+summary: '一句话摘要。'
+math: true
+cover:
+  image: 'images/cover-mamba.png'
+  alt: '文章封面图'
+---
+```
 
-1. 在 GitHub 新建或打开 `jiulics.github.io` 仓库。
-2. 把本地仓库推送到 GitHub 的 `main` 分支。
-3. 进入仓库 `Settings -> Pages`。
-4. 将 `Build and deployment` 的 `Source` 设为 `GitHub Actions`。
-5. 推送后等待 `Deploy Hugo site to GitHub Pages` 工作流完成。
+没有公式时可以删掉 `math: true`。
 
-当前配置按个人站点仓库处理，访问地址为 `https://jiulics.github.io/`。
+## 修改文章
 
-如果改用普通项目仓库，比如 `blog`，访问地址通常是 `https://jiulics.github.io/blog/`，同时需要把 `hugo.toml` 里的 `baseURL` 改成这个地址。
+直接编辑：
+
+```text
+content/posts/*.md
+```
+
+改完先本地预览，再构建检查：
+
+```powershell
+.\.tools\hugo\hugo.exe --gc --minify
+```
+
+## 发布
+
+```powershell
+git status
+git add .
+git commit -m "Update blog content"
+git push origin main
+```
+
+GitHub Actions 会自动部署到 GitHub Pages。
+
+## 公式写法
+
+行内公式使用：
+
+```text
+\(x_i\)
+```
+
+块级公式使用：
+
+```text
+\[
+x_i = y_i + z_i
+\]
+```
+
+不要用单美元符号写行内公式，避免 Markdown 误解析。
