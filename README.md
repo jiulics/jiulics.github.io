@@ -20,12 +20,12 @@
 
 ## 部署到 GitHub Pages
 
-1. 在 GitHub 新建一个仓库。
+1. 在 GitHub 新建或打开 `jiulics.github.io` 仓库。
 2. 把本地仓库推送到 GitHub 的 `main` 分支。
 3. 进入仓库 `Settings -> Pages`。
 4. 将 `Build and deployment` 的 `Source` 设为 `GitHub Actions`。
 5. 推送后等待 `Deploy Hugo site to GitHub Pages` 工作流完成。
 
-当前配置按个人站点仓库处理，推荐仓库名为 `jiulics.github.io`，访问地址为 `https://jiulics.github.io/`。
+当前配置按个人站点仓库处理，访问地址为 `https://jiulics.github.io/`。
 
 如果改用普通项目仓库，比如 `blog`，访问地址通常是 `https://jiulics.github.io/blog/`，同时需要把 `hugo.toml` 里的 `baseURL` 改成这个地址。
