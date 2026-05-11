@@ -1,0 +1,49 @@
+baseURL = 'https://jiulics.github.io/'
+locale = 'zh-cn'
+defaultContentLanguage = 'zh'
+title = 'jiulics'
+theme = 'PaperMod'
+timeZone = 'Asia/Shanghai'
+hasCJKLanguage = true
+
+[params]
+  env = 'production'
+  description = '记录技术、生活和想法。'
+  author = 'jiulics'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+
+  [params.homeInfoParams]
+    Title = 'jiulics'
+    Content = '这里会记录技术笔记、项目复盘和日常思考。'
+
+[[menu.main]]
+  identifier = 'posts'
+  name = '文章'
+  url = '/posts/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'archives'
+  name = '归档'
+  url = '/archives/'
+  weight = 20
+
+[[menu.main]]
+  identifier = 'tags'
+  name = '标签'
+  url = '/tags/'
+  weight = 30
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
