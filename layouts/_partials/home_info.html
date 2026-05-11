@@ -12,4 +12,34 @@
     </div>
   </div>
 </section>
+<section class="home-lab-panel" aria-label="research overview">
+  <div class="home-lab-panel__intro">
+    <p class="lab-kicker">Research map</p>
+    <h2>从感知模型到协同系统</h2>
+    <p>这里把博客按研究链路组织：双光融合解决看得准，Mamba 解决算得动，调度优化解决多机协同跑得稳。</p>
+  </div>
+  <div class="home-lab-metrics" aria-label="site metrics">
+    <span><strong>{{ len (where site.RegularPages "Section" "posts") }}</strong>篇文章</span>
+    <span><strong>4</strong>个方向</span>
+    <span><strong>RGB-IR</strong>主线</span>
+  </div>
+</section>
+<section class="home-research-strip" aria-label="research directions">
+  <a href="{{ "/categories/mamba-与视觉状态空间/" | relURL }}">
+    <span>Mamba 与视觉状态空间</span>
+    <small>线性复杂度、选择性扫描、端侧感知</small>
+  </a>
+  <a href="{{ "/categories/多模态融合/" | relURL }}">
+    <span>多模态融合</span>
+    <small>红外/可见光互补、软融合、交叉门控</small>
+  </a>
+  <a href="{{ "/categories/对比学习与弱配准/" | relURL }}">
+    <span>对比学习与弱配准</span>
+    <small>语义对齐、Patch-level 约束</small>
+  </a>
+  <a href="{{ "/categories/协同计算与调度/" | relURL }}">
+    <span>协同计算与调度</span>
+    <small>后缀卸载、Lyapunov、质量融合</small>
+  </a>
+</section>
 {{- end -}}
