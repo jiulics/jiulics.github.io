@@ -1,0 +1,15 @@
+{{- with site.Params.homeInfoParams }}
+<section class="lab-hero" aria-label="jiulics research lab" style="--hero-image: url('{{ "images/hero-lab.png" | relURL }}')">
+  <div class="lab-hero__visual" aria-hidden="true"></div>
+  <div class="lab-hero__content">
+    <p class="lab-kicker">UAV multimodal perception notes</p>
+    <h1>{{ .Title | markdownify }}</h1>
+    <p class="lab-subtitle">{{ .Content | markdownify }}</p>
+    <div class="lab-tags" aria-label="research directions">
+      <span>Vision Mamba</span>
+      <span>RGB-IR Fusion</span>
+      <span>Collaborative UAV</span>
+    </div>
+  </div>
+</section>
+{{- end -}}

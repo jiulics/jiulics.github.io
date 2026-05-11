@@ -3,5 +3,6 @@ resources/_gen/
 .hugo_build.lock
 .tools/
 logs/
+image/
 .DS_Store
 Thumbs.db

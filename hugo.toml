@@ -5,12 +5,13 @@ title = 'jiulics'
 theme = 'PaperMod'
 timeZone = 'Asia/Shanghai'
 hasCJKLanguage = true
+copyright = '© 2026 jiulics'
 
 [params]
   env = 'production'
-  description = '记录技术、生活和想法。'
+  description = '低空城市应急、多模态融合、Mamba 与协同计算的研究笔记。'
   author = 'jiulics'
-  defaultTheme = 'auto'
+  defaultTheme = 'dark'
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -18,10 +19,18 @@ hasCJKLanguage = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
   ShowRssButtonInSectionTermList = true
+  mainSections = ['posts']
+  keywords = ['无人机', '多模态融合', 'Mamba', '红外可见光融合', '协同计算']
 
   [params.homeInfoParams]
     Title = 'jiulics'
-    Content = '这里会记录技术笔记、项目复盘和日常思考。'
+    Content = '面向低空城市应急的多模态感知研究笔记：从红外/可见光融合、Vision Mamba 到多无人机协同推理。'
+
+[[menu.main]]
+  identifier = 'research'
+  name = '研究'
+  url = '/categories/research/'
+  weight = 5
 
 [[menu.main]]
   identifier = 'posts'
