@@ -3,7 +3,7 @@ title: '为什么 Mamba 适合无人机红外/可见光融合'
 date: 2026-05-11T10:10:00+08:00
 draft: false
 tags: ['Mamba', '无人机', '多模态融合', 'RGB-IR']
-categories: ['Mamba 与视觉状态空间']
+categories: ['状态空间与序列建模']
 summary: '从选择性状态空间模型、线性复杂度和多方向扫描出发，梳理 Mamba 在无人机红外/可见光融合中的价值。'
 math: true
 ShowToc: true

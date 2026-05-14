@@ -9,9 +9,9 @@ copyright = '© 2026 jiulics'
 
 [params]
   env = 'production'
-  description = '低空城市应急、多模态融合、Mamba 与协同计算的研究笔记。'
+  description = '关于 AI、表征学习、状态空间模型、多模态融合与系统优化的研究笔记。'
   author = 'jiulics'
-  defaultTheme = 'dark'
+  defaultTheme = 'light'
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -20,11 +20,11 @@ copyright = '© 2026 jiulics'
   ShowWordCount = true
   ShowRssButtonInSectionTermList = true
   mainSections = ['posts']
-  keywords = ['无人机', '多模态融合', 'Mamba', '红外可见光融合', '协同计算']
+  keywords = ['AI', '多模态融合', 'Mamba', '表征学习', '系统优化', '协同计算', '研究写作']
 
   [params.homeInfoParams]
     Title = 'jiulics'
-    Content = '面向低空城市应急的多模态感知研究笔记：从红外/可见光融合、Vision Mamba 到多无人机协同推理。'
+    Content = '记录关于 AI 模型机制、表征学习、状态空间模型、多模态融合、系统优化与工程实践的研究笔记。'
 
 [[menu.main]]
   identifier = 'research'

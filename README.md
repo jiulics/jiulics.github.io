@@ -33,8 +33,8 @@ http://localhost:1313/
 title: '文章标题'
 date: 2026-05-11T12:00:00+08:00
 draft: false
-tags: ['Mamba', '无人机']
-categories: ['Mamba 与视觉状态空间']
+tags: ['AI', 'Mamba', '系统优化']
+categories: ['状态空间与序列建模']
 summary: '一句话摘要。'
 math: true
 cover:
@@ -44,6 +44,14 @@ cover:
 ```
 
 没有公式时可以删掉 `math: true`。
+
+常用分类：
+
+- `状态空间与序列建模`
+- `多模态与表征学习`
+- `弱监督与鲁棒学习`
+- `系统优化与协同计算`
+- `工程工具与写作系统`
 
 ## 修改文章
 

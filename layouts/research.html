@@ -3,14 +3,15 @@
   <header class="research-head">
     <p class="lab-kicker">Research map</p>
     <h1>{{ .Title }}</h1>
-    <p>按研究方向整理无人机多模态感知、视觉状态空间模型、弱配准对齐与协同计算笔记。</p>
+    <p>按研究方向整理 AI 模型机制、表征学习、系统优化和应用场景笔记。这里会收纳多模态感知、序列建模、弱监督学习、协同计算等主题，无人机只是其中一个应用切面。</p>
   </header>
 
   {{- $areas := slice
-    (dict "title" "Mamba 与视觉状态空间" "desc" "选择性状态空间、Vision Mamba、多方向扫描与端侧高分辨率感知。" "url" "/categories/mamba-与视觉状态空间/" "accent" "cyan")
-    (dict "title" "多模态融合" "desc" "红外/可见光互补、交叉选择性扫描、质量感知门控融合。" "url" "/categories/多模态融合/" "accent" "amber")
-    (dict "title" "对比学习与弱配准" "desc" "Patch-level 对比学习、跨模态语义对齐与无人机双光弱配准。" "url" "/categories/对比学习与弱配准/" "accent" "cyan")
-    (dict "title" "协同计算与调度" "desc" "多无人机任务卸载、时延能耗建模、Lyapunov 在线调度。" "url" "/categories/协同计算与调度/" "accent" "amber")
+    (dict "title" "状态空间与序列建模" "desc" "Mamba、Vision State Space、选择性扫描、长序列与高效推理。" "url" "/categories/状态空间与序列建模/" "accent" "cyan")
+    (dict "title" "多模态与表征学习" "desc" "跨模态融合、质量感知门控、语义表示学习、模态退化鲁棒性。" "url" "/categories/多模态融合/" "accent" "amber")
+    (dict "title" "弱监督与鲁棒学习" "desc" "弱配准、Patch-level 对比学习、退化模态、语义对齐。" "url" "/categories/对比学习与弱配准/" "accent" "cyan")
+    (dict "title" "系统优化与协同计算" "desc" "任务卸载、边缘智能、Lyapunov 在线调度、质量感知决策融合。" "url" "/categories/协同计算与调度/" "accent" "amber")
+    (dict "title" "工程工具与写作系统" "desc" "研究笔记整理、Hugo 博客维护、自动化工作流、AI 辅助工程实践。" "url" "/categories/工程工具与写作系统/" "accent" "cyan")
   -}}
 
   <div class="research-grid">
