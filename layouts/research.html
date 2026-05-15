@@ -3,7 +3,7 @@
   <header class="research-head">
     <p class="lab-kicker">Research map</p>
     <h1>{{ .Title }}</h1>
-    <p>按研究方向整理 AI 模型机制、表征学习、系统优化和应用场景笔记。这里会收纳多模态感知、序列建模、弱监督学习、协同计算等主题，无人机只是其中一个应用切面。</p>
+    <p>按研究方向整理 AI 模型机制、表征学习、系统优化和应用场景笔记。这里会收纳多模态感知、序列建模、弱监督学习、协同计算等主题；无人机只是其中一个应用切面。</p>
   </header>
 
   {{- $areas := slice
@@ -11,7 +11,6 @@
     (dict "title" "多模态与表征学习" "desc" "跨模态融合、质量感知门控、语义表示学习、模态退化鲁棒性。" "url" "/categories/多模态融合/" "accent" "amber")
     (dict "title" "弱监督与鲁棒学习" "desc" "弱配准、Patch-level 对比学习、退化模态、语义对齐。" "url" "/categories/对比学习与弱配准/" "accent" "cyan")
     (dict "title" "系统优化与协同计算" "desc" "任务卸载、边缘智能、Lyapunov 在线调度、质量感知决策融合。" "url" "/categories/协同计算与调度/" "accent" "amber")
-    (dict "title" "工程工具与写作系统" "desc" "研究笔记整理、Hugo 博客维护、自动化工作流、AI 辅助工程实践。" "url" "/categories/工程工具与写作系统/" "accent" "cyan")
   -}}
 
   <div class="research-grid">
