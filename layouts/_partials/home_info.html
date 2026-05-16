@@ -2,27 +2,19 @@
 <section class="landing-hero" aria-label="jiulics landing" style="--hero-image: url('{{ "images/hero-ai-grid.svg" | relURL }}')">
   <div class="lab-hero__shade" aria-hidden="true"></div>
   <div class="lab-hero__content">
-    <div class="lab-hero__copy">
-      <p class="lab-kicker">Low-altitude AI Research</p>
-      <h1>面向低空应急的智能感知与协同决策</h1>
-      <p class="lab-subtitle">记录多智能体协作、强化学习、无人机端侧推理和 RGB-IR 多模态融合中的模型、调度与系统问题。</p>
-      <div class="lab-tags" aria-label="research directions">
-        <span>Multi-Agent</span>
-        <span>RL</span>
-        <span>UAV</span>
-        <span>RGB-IR</span>
-      </div>
-      <div class="landing-actions">
-        <a class="landing-primary" href="{{ "/posts/" | relURL }}">进入研究笔记</a>
-        <a class="landing-secondary" href="{{ "/research/" | relURL }}">查看研究地图</a>
-      </div>
+    <p class="lab-kicker">jiulics</p>
+    <h1><span class="typing-text">Sense, decide and cooperate</span><span class="typing-cursor" aria-hidden="true"></span></h1>
+    <p class="lab-subtitle">研究领域涉及多智能体协作、强化学习、无人机、低空城市应急与多模态融合。这里记录模型、调度和系统落地中的关键问题。</p>
+    <div class="lab-tags" aria-label="research directions">
+      <span>Multi-Agent Cooperation</span>
+      <span>Reinforcement Learning</span>
+      <span>UAV Emergency Response</span>
+      <span>Multimodal Fusion</span>
     </div>
-    <aside class="hero-panel" aria-label="research overview">
-      <span class="hero-panel__eyebrow">Research Stack</span>
-      <a href="{{ "/categories/协同计算与调度/" | relURL }}"><strong>协同计算与调度</strong><small>多无人机任务分配、通信约束与卸载策略。</small></a>
-      <a href="{{ "/categories/多模态融合/" | relURL }}"><strong>多模态融合</strong><small>可见光/红外质量感知、弱配准与鲁棒融合。</small></a>
-      <a href="{{ "/categories/状态空间与序列建模/" | relURL }}"><strong>端侧序列建模</strong><small>Mamba、语义压缩与长序列高效推理。</small></a>
-    </aside>
+    <div class="landing-actions">
+      <a class="landing-primary" href="{{ "/posts/" | relURL }}">进入博客</a>
+      <a class="landing-secondary" href="{{ "/research/" | relURL }}">查看研究方向</a>
+    </div>
   </div>
 </section>
 {{- end -}}
