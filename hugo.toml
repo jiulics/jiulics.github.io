@@ -22,6 +22,20 @@ copyright = '© 2026 jiulics'
   mainSections = ['posts']
   keywords = ['多智能体协作', '强化学习', '无人机', '低空城市应急', '多模态融合', '协同计算']
 
+  [params.assets]
+    favicon = 'favicon.svg'
+    favicon16x16 = 'favicon.svg'
+    favicon32x32 = 'favicon.svg'
+    apple_touch_icon = 'favicon.svg'
+    safari_pinned_tab = 'safari-pinned-tab.svg'
+    theme_color = '#07111f'
+    msapplication_TileColor = '#07111f'
+
+  [params.label]
+    text = 'jiulics'
+    icon = 'images/brand-mark.svg'
+    iconHeight = 34
+
   [params.homeInfoParams]
     Title = 'jiulics'
     Content = '研究领域涉及多智能体协作、强化学习、无人机、低空城市应急多模态融合。'

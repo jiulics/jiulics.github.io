@@ -1,20 +1,46 @@
 {{- with site.Params.homeInfoParams }}
+{{- $avatar := resources.Get "images/avatar-neural.svg" -}}
 <section class="landing-hero" aria-label="jiulics landing" style="--hero-image: url('{{ "images/hero-ai-grid.svg" | relURL }}')">
   <div class="lab-hero__shade" aria-hidden="true"></div>
+  <div class="lab-orbit lab-orbit--one" aria-hidden="true"></div>
+  <div class="lab-orbit lab-orbit--two" aria-hidden="true"></div>
   <div class="lab-hero__content">
-    <p class="lab-kicker">jiulics</p>
-    <h1><span class="typing-text">Sense, decide and cooperate</span><span class="typing-cursor" aria-hidden="true"></span></h1>
-    <p class="lab-subtitle">研究领域涉及多智能体协作、强化学习、无人机、低空城市应急与多模态融合。这里记录模型、调度和系统落地中的关键问题。</p>
-    <div class="lab-tags" aria-label="research directions">
-      <span>Multi-Agent Cooperation</span>
-      <span>Reinforcement Learning</span>
-      <span>UAV Emergency Response</span>
-      <span>Multimodal Fusion</span>
+    <div class="lab-hero__copy">
+      <p class="lab-kicker">Low-altitude Intelligence Lab</p>
+      <h1><span class="typing-text">Sense. Decide. Cooperate.</span><span class="typing-cursor" aria-hidden="true"></span></h1>
+      <p class="lab-subtitle">把多智能体协作、强化学习、无人机低空应急和多模态融合串成一套可复现的研究笔记：从感知质量、策略学习到端侧推理与任务调度。</p>
+      <div class="lab-tags" aria-label="research directions">
+        <span>Multi-Agent Systems</span>
+        <span>Reinforcement Learning</span>
+        <span>UAV Emergency AI</span>
+        <span>RGB-IR Fusion</span>
+      </div>
+      <div class="landing-actions">
+        <a class="landing-primary" href="{{ "/posts/" | relURL }}">进入研究笔记</a>
+        <a class="landing-secondary" href="{{ "/research/" | relURL }}">查看研究地图</a>
+      </div>
     </div>
-    <div class="landing-actions">
-      <a class="landing-primary" href="{{ "/posts/" | relURL }}">进入博客</a>
-      <a class="landing-secondary" href="{{ "/research/" | relURL }}">查看研究方向</a>
-    </div>
+    <aside class="hero-console" aria-label="research console">
+      <div class="hero-console__header">
+        <span>JIULICS OS</span>
+        <small>online</small>
+      </div>
+      <div class="hero-avatar">
+        <img src="{{ $avatar.RelPermalink }}" alt="jiulics avatar">
+      </div>
+      <div class="signal-stack" aria-hidden="true">
+        <span style="--level: 82%"></span>
+        <span style="--level: 58%"></span>
+        <span style="--level: 74%"></span>
+        <span style="--level: 45%"></span>
+        <span style="--level: 91%"></span>
+      </div>
+      <dl class="hero-metrics">
+        <div><dt>Focus</dt><dd>UAV x RL</dd></div>
+        <div><dt>Mode</dt><dd>Edge AI</dd></div>
+        <div><dt>Fusion</dt><dd>RGB/IR</dd></div>
+      </dl>
+    </aside>
   </div>
 </section>
 {{- end -}}

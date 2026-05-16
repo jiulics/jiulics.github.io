@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="jiulics avatar">
+  <defs>
+    <radialGradient id="avatar-aura" cx="50%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#6ef7ff" stop-opacity="0.92"/>
+      <stop offset="0.42" stop-color="#2555ff" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#060b18"/>
+    </radialGradient>
+    <linearGradient id="avatar-ring" x1="36" x2="220" y1="220" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.48" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#58ffd6"/>
+    </linearGradient>
+    <filter id="avatar-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="#050914"/>
+  <circle cx="128" cy="128" r="104" fill="url(#avatar-aura)"/>
+  <circle cx="128" cy="128" r="91" fill="none" stroke="url(#avatar-ring)" stroke-width="5" filter="url(#avatar-glow)"/>
+  <path d="M48 153c30-43 54-65 83-65 25 0 41 17 41 40 0 29-22 50-55 50-23 0-43-9-61-25" fill="none" stroke="#dffff8" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" filter="url(#avatar-glow)"/>
+  <path d="M72 96h34c18 0 33-14 33-33M158 94h33M160 128h46M75 130H50" fill="none" stroke="#73ffe4" stroke-opacity="0.82" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#f4fffd" filter="url(#avatar-glow)">
+    <circle cx="72" cy="96" r="7"/>
+    <circle cx="139" cy="63" r="7"/>
+    <circle cx="191" cy="94" r="6"/>
+    <circle cx="206" cy="128" r="6"/>
+    <circle cx="50" cy="130" r="6"/>
+  </g>
+  <text x="128" y="222" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5" fill="#dffff8">JIULICS</text>
+</svg>

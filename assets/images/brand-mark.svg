@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="jiulics neural mark">
+  <defs>
+    <linearGradient id="mark-bg" x1="18" x2="110" y1="110" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.42" stop-color="#123c7c"/>
+      <stop offset="1" stop-color="#20f7d2"/>
+    </linearGradient>
+    <linearGradient id="mark-line" x1="26" x2="104" y1="95" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.5" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#8fffe8"/>
+    </linearGradient>
+    <filter id="mark-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M64 7 111 34v60l-47 27-47-27V34L64 7Z" fill="url(#mark-bg)"/>
+  <path d="M64 13 105 37v54l-41 24-41-24V37l41-24Z" fill="none" stroke="#b9fff4" stroke-opacity="0.28" stroke-width="2"/>
+  <path d="M34 84c13-26 26-39 39-39 10 0 15 8 15 18 0 14-10 26-27 26-8 0-15-3-22-8" fill="none" stroke="url(#mark-line)" stroke-width="8" stroke-linecap="round" filter="url(#mark-glow)"/>
+  <path d="M42 45h24c10 0 18-8 18-18" fill="none" stroke="#e8fffb" stroke-opacity="0.86" stroke-width="5" stroke-linecap="round"/>
+  <path d="M86 48h13M75 72h23M31 63h17" stroke="#9fffee" stroke-opacity="0.78" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#ecfffb" filter="url(#mark-glow)">
+    <circle cx="42" cy="45" r="4.5"/>
+    <circle cx="84" cy="27" r="4.5"/>
+    <circle cx="99" cy="48" r="3.8"/>
+    <circle cx="98" cy="72" r="3.8"/>
+    <circle cx="31" cy="63" r="3.8"/>
+  </g>
+</svg>
