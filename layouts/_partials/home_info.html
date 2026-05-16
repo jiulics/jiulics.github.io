@@ -1,21 +1,27 @@
 {{- with site.Params.homeInfoParams }}
-<section class="lab-hero" aria-label="jiulics research notebook" style="--hero-image: url('{{ "images/hero-lab-v2.png" | relURL }}')">
-  <div class="lab-hero__visual" aria-hidden="true"></div>
+<section class="lab-hero" aria-label="jiulics research notebook">
   <div class="lab-hero__content">
-    <p class="lab-kicker">Jiulics / Research notebook</p>
+    <p class="lab-kicker">Jiulics Research Notes</p>
     <h1>{{ .Title | markdownify }}</h1>
     <p class="lab-subtitle">{{ .Content | markdownify }}</p>
     <div class="lab-tags" aria-label="research directions">
-      <span>Representation</span>
-      <span>Multimodal</span>
-      <span>Sequence Models</span>
-      <span>Systems</span>
+      <span>Representation Learning</span>
+      <span>Multimodal Perception</span>
+      <span>State Space Models</span>
+      <span>Edge Systems</span>
     </div>
+  </div>
+  <div class="lab-hero__figure" aria-hidden="true">
+    <div class="lab-orbit lab-orbit--one"></div>
+    <div class="lab-orbit lab-orbit--two"></div>
+    <div class="lab-node lab-node--blue"></div>
+    <div class="lab-node lab-node--cyan"></div>
+    <div class="lab-node lab-node--amber"></div>
   </div>
   <div class="lab-hero__panel" aria-label="current research focus">
     <span>Current focus</span>
-    <strong>从模型机制到可靠系统</strong>
-    <p>无人机只是应用切面之一。这里更关心表征、跨模态感知、长序列建模和系统优化如何互相咬合。</p>
+    <strong>模型机制、跨模态感知与系统约束</strong>
+    <p>用研究笔记把公式、实验直觉和工程取舍放在同一张图上。</p>
   </div>
 </section>
 
