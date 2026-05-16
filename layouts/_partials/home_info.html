@@ -1,5 +1,5 @@
 {{- with site.Params.homeInfoParams }}
-<section class="landing-hero" aria-label="jiulics landing" style="--hero-image: url('{{ "images/hero-lab-v2.png" | relURL }}')">
+<section class="landing-hero" aria-label="jiulics landing" style="--hero-image: url('{{ "images/hero-ai-grid.svg" | relURL }}')">
   <div class="lab-hero__shade" aria-hidden="true"></div>
   <div class="lab-hero__content">
     <p class="lab-kicker">jiulics</p>
@@ -14,22 +14,6 @@
     <div class="landing-actions">
       <a class="landing-primary" href="{{ "/posts/" | relURL }}">进入博客</a>
       <a class="landing-secondary" href="{{ "/research/" | relURL }}">查看研究方向</a>
-    </div>
-  </div>
-  <a class="lab-scroll-down" href="#intro-cards" aria-label="scroll to intro">↓</a>
-</section>
-
-<section id="intro-cards" class="home-intro-cards" aria-label="site introduction">
-  <div class="home-intro-cards__inner">
-    <p class="lab-kicker">Research scope</p>
-    <h2>围绕低空应急场景，把感知、决策和协作放在一起讨论</h2>
-    <div class="home-intro-card-row">
-      <article class="home-intro-card">
-        <img src="{{ "images/hero-lab-v2.png" | relURL }}" alt="research notebook visual">
-        <h3>Blog</h3>
-        <p>文章会尽量少写口号，多写约束、公式、失败条件和可部署性。</p>
-        <a href="{{ "/posts/" | relURL }}">打开博客主页</a>
-      </article>
     </div>
   </div>
 </section>
