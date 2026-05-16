@@ -1,8 +1,9 @@
 {{- with site.Params.homeInfoParams }}
-<section class="lab-hero" aria-label="jiulics research notebook">
+<section class="lab-hero" aria-label="jiulics research notebook" style="--hero-image: url('{{ "images/hero-lab-v2.png" | relURL }}')">
+  <div class="lab-hero__shade" aria-hidden="true"></div>
   <div class="lab-hero__content">
-    <p class="lab-kicker">Jiulics Research Notes</p>
-    <h1>{{ .Title | markdownify }}</h1>
+    <p class="lab-kicker">{{ .Title | markdownify }}</p>
+    <h1><span class="typing-text">Think, research and build well</span><span class="typing-cursor" aria-hidden="true"></span></h1>
     <p class="lab-subtitle">{{ .Content | markdownify }}</p>
     <div class="lab-tags" aria-label="research directions">
       <span>Representation Learning</span>
@@ -11,17 +12,20 @@
       <span>Edge Systems</span>
     </div>
   </div>
-  <div class="lab-hero__figure" aria-hidden="true">
-    <div class="lab-orbit lab-orbit--one"></div>
-    <div class="lab-orbit lab-orbit--two"></div>
-    <div class="lab-node lab-node--blue"></div>
-    <div class="lab-node lab-node--cyan"></div>
-    <div class="lab-node lab-node--amber"></div>
-  </div>
-  <div class="lab-hero__panel" aria-label="current research focus">
-    <span>Current focus</span>
-    <strong>模型机制、跨模态感知与系统约束</strong>
-    <p>用研究笔记把公式、实验直觉和工程取舍放在同一张图上。</p>
+  <a class="lab-scroll-down" href="#intro-cards" aria-label="scroll to intro">↓</a>
+</section>
+
+<section id="intro-cards" class="home-intro-cards" aria-label="site introduction">
+  <div class="home-intro-cards__inner">
+    <p class="lab-kicker">For what?</p>
+    <h2>把研究过程写成可复用的知识地图</h2>
+    <div class="home-intro-card-row">
+      <article class="home-intro-card">
+        <img src="{{ "images/hero-lab-v2.png" | relURL }}" alt="research notebook visual">
+        <h3>Me</h3>
+        <p>打怪升级的记录。这里整理 AI 表征、多模态感知、状态空间模型和系统优化。</p>
+      </article>
+    </div>
   </div>
 </section>
 
