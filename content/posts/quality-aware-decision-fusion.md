@@ -4,7 +4,7 @@ date: 2026-05-11T20:30:00+08:00
 draft: false
 tags: ['决策融合', '质量评估', '多无人机', 'WBF']
 categories: ['协同计算与调度']
-summary: '讨论多无人机协同推理中控制面与数据面解耦：调度阶段管时延，结果融合阶段主要看预测质量。'
+summary: '把多无人机协同推理拆成控制面和数据面：调度阶段约束时延，结果融合阶段按预测质量加权。'
 math: true
 ShowToc: true
 TocOpen: true

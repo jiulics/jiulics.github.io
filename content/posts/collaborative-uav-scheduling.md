@@ -4,7 +4,7 @@ date: 2026-05-11T10:40:00+08:00
 draft: false
 tags: ['协同计算', '无人机', 'Lyapunov', 'Mamba', '任务卸载']
 categories: ['协同计算与调度']
-summary: '整理多无人机双光感知系统中的后缀卸载、时延能耗建模、精度收益代理和质量感知结果融合。'
+summary: '把多无人机双光感知拆成后缀卸载、时延能耗建模、精度收益代理和质量感知结果融合四个调度环节。'
 math: true
 ShowToc: true
 TocOpen: true

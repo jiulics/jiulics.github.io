@@ -4,6 +4,10 @@
 {{- partial "index_profile.html" . }}
 {{- else }}
 
+{{- if .IsHome }}
+{{- partial "home_info.html" . }}
+{{- else }}
+
 {{- if not .IsHome | and .Title }}
 <header class="page-header page-card">
   {{- partial "breadcrumbs.html" . }}
@@ -40,19 +44,29 @@
 
 {{- $pages := union .RegularPages .Sections }}
 
-{{- if .IsHome }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
-{{- end }}
-
 {{- $paginator := .Paginate $pages }}
 
-{{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-{{- partial "home_info.html" . }}
-{{- end }}
-
 {{- $term := .Data.Term }}
-{{- if .IsHome }}
+{{- $isPostsHome := and (eq .Kind "section") (eq .Section "posts") }}
+{{- if $isPostsHome }}
+<section class="home-research-strip" aria-label="research directions">
+  <a href="{{ "/categories/协同计算与调度/" | relURL }}">
+    <span>多智能体协作</span>
+    <small>任务分配、协同推理、通信约束与在线调度。</small>
+  </a>
+  <a href="{{ "/research/" | relURL }}">
+    <span>强化学习</span>
+    <small>面向动态环境的策略学习、奖励设计和安全约束。</small>
+  </a>
+  <a href="{{ "/categories/多模态融合/" | relURL }}">
+    <span>低空应急多模态融合</span>
+    <small>红外/可见光、质量感知、弱配准与鲁棒感知。</small>
+  </a>
+  <a href="{{ "/categories/状态空间与序列建模/" | relURL }}">
+    <span>无人机端侧建模</span>
+    <small>长序列、状态空间模型、语义压缩和边缘部署。</small>
+  </a>
+</section>
 <div class="home-page-grid">
   <section class="home-feed" aria-label="文章列表">
 {{- end }}
@@ -103,13 +117,13 @@
 </article>
 {{- end }}
 
-{{- if .IsHome }}
+{{- if $isPostsHome }}
   </section>
   <aside class="home-sidebar" aria-label="站点侧栏">
     <section class="sidebar-card sidebar-profile">
       <div class="sidebar-avatar">j</div>
       <h2>jiulics</h2>
-      <p>记录 AI 表征、多模态感知、状态空间模型与系统优化。无人机是应用切面之一，不是边界。</p>
+      <p>聚焦多智能体协作、强化学习、无人机低空城市应急与多模态融合。</p>
       <div class="sidebar-stats">
         <span><strong>{{ len (where site.RegularPages "Section" "posts") }}</strong>文章</span>
         <span><strong>{{ len site.Taxonomies.tags }}</strong>标签</span>
@@ -118,10 +132,10 @@
     </section>
     <section class="sidebar-card">
       <h3>研究方向</h3>
-      <a class="sidebar-link" href="{{ "/categories/状态空间与序列建模/" | relURL }}">状态空间与序列建模</a>
-      <a class="sidebar-link" href="{{ "/categories/多模态融合/" | relURL }}">多模态与表征学习</a>
-      <a class="sidebar-link" href="{{ "/categories/对比学习与弱配准/" | relURL }}">弱监督与鲁棒学习</a>
-      <a class="sidebar-link" href="{{ "/categories/协同计算与调度/" | relURL }}">系统优化与协同计算</a>
+      <a class="sidebar-link" href="{{ "/categories/协同计算与调度/" | relURL }}">多智能体协作与调度</a>
+      <a class="sidebar-link" href="{{ "/research/" | relURL }}">强化学习与在线决策</a>
+      <a class="sidebar-link" href="{{ "/categories/多模态融合/" | relURL }}">低空应急多模态融合</a>
+      <a class="sidebar-link" href="{{ "/categories/状态空间与序列建模/" | relURL }}">长序列建模与端侧推理</a>
     </section>
     <section class="sidebar-card">
       <h3>最近更新</h3>
@@ -157,6 +171,8 @@
     {{- end }}
   </nav>
 </footer>
+{{- end }}
+
 {{- end }}
 
 {{- end }}

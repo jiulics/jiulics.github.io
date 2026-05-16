@@ -4,7 +4,7 @@ date: 2026-05-11T10:30:00+08:00
 draft: false
 tags: ['对比学习', 'RGB-IR', '弱配准', '多模态融合']
 categories: ['对比学习与弱配准']
-summary: '梳理红外/可见光弱配准条件下的 Patch-level 与事件级对比学习，用语义一致性约束双模态融合。'
+summary: '面向红外/可见光弱配准，用事件级和 patch-level 对比学习约束语义一致性，避免强求像素级对齐。'
 math: true
 ShowToc: true
 TocOpen: true

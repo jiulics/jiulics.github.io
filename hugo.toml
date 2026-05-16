@@ -9,7 +9,7 @@ copyright = '© 2026 jiulics'
 
 [params]
   env = 'production'
-  description = '关于 AI 表征、多模态感知、长序列建模与系统优化的研究笔记。'
+  description = '关于多智能体协作、强化学习、无人机低空城市应急与多模态融合的研究记录。'
   author = 'jiulics'
   defaultTheme = 'light'
   ShowReadingTime = true
@@ -20,11 +20,11 @@ copyright = '© 2026 jiulics'
   ShowWordCount = true
   ShowRssButtonInSectionTermList = true
   mainSections = ['posts']
-  keywords = ['AI', '多模态融合', 'Mamba', '表征学习', '系统优化', '协同计算']
+  keywords = ['多智能体协作', '强化学习', '无人机', '低空城市应急', '多模态融合', '协同计算']
 
   [params.homeInfoParams]
     Title = 'jiulics'
-    Content = '记录 AI 模型机制、表征学习、多模态感知、长序列建模与系统优化。'
+    Content = '研究领域涉及多智能体协作、强化学习、无人机、低空城市应急多模态融合。'
 
 [[menu.main]]
   identifier = 'research'

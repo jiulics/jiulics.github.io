@@ -16,6 +16,10 @@
     --lab-red: #bd5462;
     --lab-soft-blue: rgba(59, 102, 216, 0.09);
     --lab-soft-cyan: rgba(18, 136, 155, 0.1);
+    --chrome-bg: #050505;
+    --chrome-text: #ffffff;
+    --chrome-muted: rgba(255, 255, 255, 0.78);
+    --hero-overlay: rgba(0, 0, 0, 0.72);
     --lab-card: 10px;
     --lab-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
     --lab-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -40,6 +44,10 @@
     --lab-red: #ef8792;
     --lab-soft-blue: rgba(118, 167, 255, 0.14);
     --lab-soft-cyan: rgba(96, 210, 223, 0.14);
+    --chrome-bg: #050505;
+    --chrome-text: #ffffff;
+    --chrome-muted: rgba(255, 255, 255, 0.78);
+    --hero-overlay: rgba(0, 0, 0, 0.76);
     --lab-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
     --lab-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
@@ -63,10 +71,7 @@ body {
 }
 
 :root[data-theme="dark"] body {
-    background:
-        radial-gradient(circle at 16% -10%, rgba(124, 162, 255, 0.15), transparent 28rem),
-        radial-gradient(circle at 92% 8%, rgba(233, 185, 109, 0.09), transparent 24rem),
-        linear-gradient(180deg, #0d0f14 0, var(--theme) 340px);
+    background: var(--theme);
 }
 
 a {
@@ -75,13 +80,13 @@ a {
 
 .header {
     border-bottom: 0;
-    background: #050505;
+    background: var(--chrome-bg);
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
     backdrop-filter: none;
 }
 
 :root[data-theme="dark"] .header {
-    background: #050505;
+    background: var(--chrome-bg);
 }
 
 .header-nav {
@@ -94,7 +99,7 @@ a {
 }
 
 .logo a {
-    color: #fff;
+    color: var(--chrome-text);
     font-weight: 900;
 }
 
@@ -105,7 +110,7 @@ a {
     height: 28px;
     margin-right: 9px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #fff, #9ba5ff 55%, #161616 56%);
+    background: linear-gradient(135deg, var(--chrome-text), #9ba5ff 55%, var(--chrome-bg) 56%);
     vertical-align: -7px;
 }
 
@@ -121,7 +126,7 @@ a {
 
 #menu a {
     border-radius: 999px;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--chrome-muted);
     font-size: 0.9rem;
     font-weight: 700;
     transition: background 160ms ease, color 160ms ease;
@@ -129,8 +134,8 @@ a {
 
 #menu a:hover,
 #menu .active {
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
+    background: color-mix(in srgb, var(--chrome-text) 12%, transparent);
+    color: var(--chrome-text);
 }
 
 #menu .active {
@@ -171,7 +176,7 @@ a {
     text-transform: uppercase;
 }
 
-.lab-hero {
+.landing-hero {
     position: relative;
     display: flex;
     width: 100vw;
@@ -181,7 +186,7 @@ a {
     border: 0;
     border-radius: 0;
     background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.72)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18), var(--hero-overlay)),
         var(--hero-image);
     background-position: center;
     background-size: cover;
@@ -189,7 +194,7 @@ a {
     isolation: isolate;
 }
 
-.lab-hero::before,
+.landing-hero::before,
 .lab-hero__shade {
     content: "";
     position: absolute;
@@ -197,7 +202,7 @@ a {
     pointer-events: none;
 }
 
-.lab-hero::before {
+.landing-hero::before {
     background:
         linear-gradient(rgba(255, 255, 255, 0.065) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
@@ -224,7 +229,7 @@ a {
     text-align: center;
 }
 
-.lab-hero h1 {
+.landing-hero h1 {
     margin: 0;
     color: #fff;
     font-size: clamp(2.4rem, 6vw, 4.4rem);
@@ -293,6 +298,40 @@ a {
     white-space: normal;
 }
 
+.landing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.landing-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.landing-primary {
+    color: #050505;
+    background: #fff;
+}
+
+.landing-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.landing-actions a:hover {
+    transform: translateY(-1px);
+}
+
 .lab-scroll-down {
     position: absolute;
     bottom: 5.5vh;
@@ -317,8 +356,8 @@ a {
     width: 100vw;
     margin: 0 calc(50% - 50vw) 34px;
     padding: 64px 20px;
-    background: #050505;
-    color: #fff;
+    background: var(--chrome-bg);
+    color: var(--chrome-text);
     text-align: center;
 }
 
@@ -329,7 +368,7 @@ a {
 
 .home-intro-cards h2 {
     margin: 0 0 34px;
-    color: #fff;
+    color: var(--chrome-text);
     font-size: clamp(1.7rem, 4vw, 2.8rem);
     letter-spacing: -0.04em;
 }
@@ -342,8 +381,8 @@ a {
 .home-intro-card {
     width: min(390px, 100%);
     padding: 30px 28px;
-    color: #222;
-    background: #fff;
+    color: var(--content);
+    background: var(--entry);
 }
 
 .home-intro-card img {
@@ -356,15 +395,25 @@ a {
 
 .home-intro-card h3 {
     margin: 0 0 12px;
-    color: #111;
+    color: var(--primary);
     font-size: 1.35rem;
 }
 
 .home-intro-card p {
     margin: 0;
-    color: #666;
+    color: var(--secondary);
     font-style: italic;
     line-height: 1.75;
+}
+
+.home-intro-card a {
+    display: inline-flex;
+    margin-top: 18px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    color: var(--chrome-text);
+    background: var(--chrome-bg);
+    font-weight: 800;
 }
 
 .home-research-strip {
@@ -952,7 +1001,7 @@ a {
 }
 
 @media (max-width: 1180px) {
-    .lab-hero {
+    .landing-hero {
         min-height: calc(100vh - 64px);
     }
 
@@ -1004,7 +1053,7 @@ a {
         font-size: 0.86rem;
     }
 
-    .lab-hero {
+    .landing-hero {
         min-height: calc(100vh - 58px);
         border-radius: 0;
     }
@@ -1014,7 +1063,7 @@ a {
         padding: 0 22px;
     }
 
-    .lab-hero h1 {
+    .landing-hero h1 {
         font-size: clamp(2rem, 9.5vw, 3rem);
         letter-spacing: -0.035em;
     }
@@ -1117,7 +1166,7 @@ a {
         padding: 5px 10px;
     }
 
-    .lab-hero {
+    .landing-hero {
         margin-top: 0;
         border-radius: 0;
     }

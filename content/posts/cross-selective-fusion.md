@@ -4,7 +4,7 @@ date: 2026-05-11T10:20:00+08:00
 draft: false
 tags: ['Cross-Selective Scan', '红外可见光融合', 'Vision Mamba', '门控融合']
 categories: ['多模态融合']
-summary: '整理 Cross-Selective Scan 与非对称交叉门控融合的设计直觉：让可见光纹理与红外热目标互相选择，而不是简单拼接。'
+summary: '用 Cross-Selective Scan 和非对称交叉门控建模 RGB-IR 融合：让可见光纹理与红外热目标互相选择，而不是简单拼接。'
 math: true
 ShowToc: true
 TocOpen: true
@@ -134,4 +134,4 @@ Cross-Attention 通常通过 query-key-value 计算模态间相关性。它表�
 
 Cross-Selective Fusion 的重点不是发明一个更复杂的拼接层，而是让融合过程具备内容相关的“选择权”。可见光提供纹理，红外提供热目标；谁主导，不由人工规则固定，而由输入质量和状态更新共同决定。
 
-这类机制特别适合无人机低空应急场景，因为环境变化太快，固定融合权重几乎一定会在某些时刻失效。
+在低空应急场景中，光照、烟雾、遮挡和热交叉会不断改变模态可靠性；固定融合权重很难覆盖这些状态切换。
