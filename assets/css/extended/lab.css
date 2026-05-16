@@ -985,13 +985,13 @@ a {
     }
 
     .landing-hero {
-        min-height: calc(100vh - 58px);
+        min-height: min(680px, calc(100svh - 58px));
         border-radius: 0;
     }
 
     .lab-hero__content {
         align-self: center;
-        padding: 0 22px;
+        padding: 42px 22px;
     }
 
     .landing-hero h1 {
@@ -1007,6 +1007,7 @@ a {
 
     .lab-subtitle {
         font-size: 0.98rem;
+        line-height: 1.72;
     }
 
     .home-research-strip,
@@ -1079,7 +1080,7 @@ a {
         display: grid;
         grid-template-columns: auto auto;
         justify-content: stretch;
-        row-gap: 4px;
+        row-gap: 0;
     }
 
     .logo {
@@ -1090,20 +1091,33 @@ a {
         grid-column: 1 / -1;
         justify-content: flex-start;
         width: 100%;
-        padding-bottom: 6px;
+        min-height: 38px;
+        padding-bottom: 5px;
     }
 
     #menu a {
-        padding: 5px 10px;
+        padding: 4px 9px;
+        font-size: 0.82rem;
     }
 
     .landing-hero {
         margin-top: 0;
+        min-height: min(620px, calc(100svh - 98px));
         border-radius: 0;
     }
 
     .lab-hero__content {
-        padding: 0 18px;
+        padding: 34px 18px;
+    }
+
+    .lab-kicker {
+        margin-bottom: 10px;
+        font-size: 0.7rem;
+    }
+
+    .landing-hero h1 {
+        font-size: clamp(1.82rem, 9vw, 2.55rem);
+        line-height: 1.12;
     }
 
     .typing-text {
@@ -1111,8 +1125,57 @@ a {
         animation: none;
     }
 
+    .typing-cursor {
+        display: none;
+    }
+
+    .lab-subtitle {
+        margin-top: 16px;
+        font-size: 0.92rem;
+        line-height: 1.62;
+    }
+
     .lab-tags {
+        gap: 7px;
+        margin-top: 18px;
+    }
+
+    .lab-tags span {
+        min-height: 28px;
+        padding: 0 9px;
+        font-size: 0.72rem;
+    }
+
+    .landing-actions {
+        gap: 9px;
         margin-top: 22px;
+    }
+
+    .landing-actions a {
+        min-height: 38px;
+        flex: 1 1 136px;
+        padding: 0 12px;
+        font-size: 0.86rem;
+    }
+
+    .home-research-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 20px 0 18px;
+    }
+
+    .home-research-strip a {
+        min-height: 112px;
+        padding: 16px 14px;
+    }
+
+    .home-research-strip span {
+        font-size: 0.92rem;
+    }
+
+    .home-research-strip small {
+        font-size: 0.72rem;
+        line-height: 1.45;
     }
 
     .page-header,
