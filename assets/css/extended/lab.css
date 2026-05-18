@@ -623,6 +623,7 @@ a {
 
 .list .main > .post-entry .entry-cover,
 .list .main > .first-entry .entry-cover {
+    display: flex;
     height: 100%;
     min-height: 190px;
     aspect-ratio: auto;
@@ -786,6 +787,19 @@ a {
     overflow-y: hidden;
     max-width: 100%;
     padding: 8px 0;
+}
+
+.post-content .mermaid {
+    margin: 28px 0;
+    overflow-x: auto;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--lab-card);
+    background: rgba(255, 255, 255, 0.66);
+}
+
+:root[data-theme="dark"] .post-content .mermaid {
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .post-content pre,

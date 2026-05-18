@@ -13,3 +13,26 @@
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 {{- end -}}
+
+{{- if or .Params.mermaid site.Params.mermaid -}}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  const blocks = document.querySelectorAll('pre > code.language-mermaid');
+  blocks.forEach((code) => {
+    const pre = code.parentElement;
+    const diagram = document.createElement('div');
+    diagram.className = 'mermaid';
+    diagram.textContent = code.textContent;
+    pre.replaceWith(diagram);
+  });
+
+  mermaid.initialize({
+    startOnLoad: false,
+    securityLevel: 'strict',
+    theme: document.documentElement.dataset.theme === 'dark' ? 'dark' : 'default'
+  });
+
+  mermaid.run({ querySelector: '.mermaid' });
+</script>
+{{- end -}}
