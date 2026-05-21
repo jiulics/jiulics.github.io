@@ -1,4 +1,4 @@
----
+﻿---
 title: '小智小程序云开发架构复现'
 date: 2026-05-18T09:10:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '从原生微信小程序、云函数、云数据库三个层面复现�
 ShowToc: true
 TocOpen: true
 mermaid: true
-cover:
-  image: 'images/cover-miniapp-cloud-architecture.svg'
-  alt: '小程序云开发架构封面图'
+cover: 'images/cover-miniapp-cloud-architecture.svg'
 ---
 
 _从原生微信小程序、云函数、云数据库三个层面复现可真机运行的 AI 聊天应用。_
@@ -106,3 +104,5 @@ node cloudfunctions/xiaozhiProxy/test.js
 - 上传附件后历史恢复仍可见
 - 语音转写成功后按文本发送
 - 换微信用户后历史为空
+
+

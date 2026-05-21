@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Cross-Selective Fusion：用一个模态控制另一个模态的信息流'
 date: 2026-05-11T10:20:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '用 Cross-Selective Scan 和非对称交叉门控建模 RGB-IR 融合�
 math: true
 ShowToc: true
 TocOpen: true
-cover:
-  image: 'images/cover-fusion.png'
-  alt: '红外可见光多模态融合封面图'
+cover: 'images/cover-fusion.png'
 ---
 
 很多红外/可见光融合方法最终都会走到一个问题：到底怎么融合？最朴素的方法是拼接或相加：
@@ -135,3 +133,5 @@ Cross-Attention 通常通过 query-key-value 计算模态间相关性。它表�
 Cross-Selective Fusion 的重点不是发明一个更复杂的拼接层，而是让融合过程具备内容相关的“选择权”。可见光提供纹理，红外提供热目标；谁主导，不由人工规则固定，而由输入质量和状态更新共同决定。
 
 在低空应急场景中，光照、烟雾、遮挡和热交叉会不断改变模态可靠性；固定融合权重很难覆盖这些状态切换。
+
+

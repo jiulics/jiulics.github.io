@@ -1,6 +1,6 @@
 # jiulics
 
-Hugo + PaperMod 搭建的研究型博客，源码在当前目录，线上地址：
+Hugo + Reimu 搭建的研究型博客，源码在当前目录，线上地址：
 
 ```text
 https://jiulics.github.io/
@@ -37,9 +37,7 @@ tags: ['AI', 'Mamba', '系统优化']
 categories: ['状态空间与序列建模']
 summary: '一句话摘要。'
 math: true
-cover:
-  image: 'images/cover-mamba.png'
-  alt: '文章封面图'
+cover: 'images/cover-mamba.png'
 ---
 ```
 

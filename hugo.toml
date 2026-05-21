@@ -1,54 +1,74 @@
 baseURL = 'https://jiulics.github.io/'
-locale = 'zh-cn'
-defaultContentLanguage = 'zh'
+locale = 'zh-CN'
+defaultContentLanguage = 'zh-CN'
 title = 'jiulics'
-theme = 'PaperMod'
+theme = 'reimu'
 timeZone = 'Asia/Shanghai'
 hasCJKLanguage = true
 copyright = '© 2026 jiulics'
 
+[languages]
+  [languages.zh-CN]
+    label = '简体中文'
+    weight = 1
+    hasCJKLanguage = true
+
 [params]
   env = 'production'
-  description = '关于多智能体协作、强化学习、无人机低空城市应急与多模态融合的研究记录。'
   author = 'jiulics'
-  defaultTheme = 'light'
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = true
-  ShowRssButtonInSectionTermList = true
+  description = '关于多智能体协作、强化学习、无人机低空城市应急与多模态融合的研究记录。'
+  subtitle = '研究领域涉及多智能体协作、强化学习、无人机低空城市应急与多模态融合。'
   mainSections = ['posts']
+  banner = 'images/generated/blog-bg.png'
+  avatar = 'avatar.jpg'
+  reimu_cursor = false
+
+  [params.preloader]
+    enable = false
+  [params.firework]
+    enable = false
   keywords = ['多智能体协作', '强化学习', '无人机', '低空城市应急', '多模态融合', '协同计算']
 
-  [params.homeInfoParams]
-    Title = 'jiulics'
-    Content = '研究领域涉及多智能体协作、强化学习、无人机、低空城市应急多模态融合。'
+  [params.summary]
+    enable = true
+    style = 'subtitle'
 
-[[menu.main]]
-  identifier = 'research'
-  name = '研究'
-  url = '/research/'
-  weight = 5
+  [params.sort_order]
+    home = 'date-reverse'
+    archive = 'date-reverse'
 
-[[menu.main]]
-  identifier = 'posts'
-  name = '文章'
-  url = '/posts/'
-  weight = 10
+  [[params.menu]]
+    name = 'home'
+    url = ''
+    icon = false
 
-[[menu.main]]
-  identifier = 'archives'
-  name = '归档'
-  url = '/archives/'
-  weight = 20
+  [[params.menu]]
+    name = 'research'
+    url = 'research'
+    icon = false
 
-[[menu.main]]
-  identifier = 'tags'
-  name = '标签'
-  url = '/tags/'
-  weight = 30
+  [[params.menu]]
+    name = 'archives'
+    url = 'archives'
+    icon = false
+
+  [[params.menu]]
+    name = 'tags'
+    url = 'tags'
+    icon = false
+
+  [params.footer]
+    since = 2026
+    powered = true
+    count = true
+    busuanzi = false
+
+  [params.sidebar]
+    position = 'right'
+    menu = true
+
+    [params.sidebar.article]
+      show_common = true
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
@@ -58,6 +78,9 @@ copyright = '© 2026 jiulics'
     dir = ':cacheDir/images'
 
 [markup]
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = false
   [markup.goldmark]
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]

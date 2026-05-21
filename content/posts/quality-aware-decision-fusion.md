@@ -1,4 +1,4 @@
----
+﻿---
 title: '质量感知决策融合：不要让延迟惩罚重复伤害高质量结果'
 date: 2026-05-11T20:30:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '把多无人机协同推理拆成控制面和数据面：调度阶段�
 math: true
 ShowToc: true
 TocOpen: true
-cover:
-  image: 'images/cover-quality-decision.png'
-  alt: '质量感知决策融合封面图'
+cover: 'images/cover-quality-decision.png'
 ---
 
 多无人机协同感知最后一定会遇到一个问题：多个节点都返回了检测结果，发起节点到底相信谁？最直觉的做法是把质量高、延迟低的结果权重调大。但这里有一个陷阱：如果调度阶段已经用时延约束筛过一次，融合阶段再强行惩罚延迟，可能会重复伤害高质量结果。
@@ -104,3 +102,5 @@ Z(t)D_t+Y(t)E_t+\sum_jQ_j(t)C_{in}^j(t)-V\hat{\mathcal A}_t
 3. 超时结果先被剔除，准时结果再按质量融合。
 
 这样系统会更容易解释，也更不容易出现“调度已经惩罚一次，融合又惩罚一次”的重复约束问题。
+
+

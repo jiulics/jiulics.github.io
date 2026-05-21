@@ -40,9 +40,7 @@ tags: ['AI', 'Mamba', '系统优化']
 categories: ['状态空间与序列建模']
 summary: '一句话摘要。'
 math: true
-cover:
-  image: 'images/cover-mamba.png'
-  alt: '文章封面图'
+cover: 'images/cover-mamba.png'
 ---
 ```
 

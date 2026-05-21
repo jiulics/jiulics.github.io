@@ -1,4 +1,4 @@
----
+﻿---
 title: 'MCISFNet 笔记：为什么要先补充，再交互'
 date: 2026-05-11T20:10:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '用 MCISFNet 解析 RGB-Infrared 航空目标检测中的先补充后�
 math: true
 ShowToc: true
 TocOpen: true
-cover:
-  image: 'images/cover-soft-fusion.png'
-  alt: '显著性软融合研究封面图'
+cover: 'images/cover-soft-fusion.png'
 ---
 
 多模态融合里有一个常被低估的问题：特征交互并不总是越早越好。如果某个模态已经因为暗光、烟雾、热交叉或运动模糊变得不完整，直接把它拿去和另一模态交互，噪声会沿着网络跨层传播。后面再加注意力，也只是把污染后的特征重新加权。
@@ -134,3 +132,5 @@ MCISFNet 最值得借鉴的不是某一个卷积细节，而是它的融合顺�
 3. 在深层共享上下文中完成联合语义提取。
 
 放到无人机 RGB-IR 感知里，模态退化往往是局部、动态、连续发生的；融合模块因此不宜做硬选择，而应保留软补充、分阶段交互和质量感知。
+
+

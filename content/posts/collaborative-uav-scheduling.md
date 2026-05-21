@@ -1,4 +1,4 @@
----
+﻿---
 title: '多无人机协同推理与卸载调度：从 Mamba 状态到 Lyapunov 优化'
 date: 2026-05-11T10:40:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '把多无人机双光感知拆成后缀卸载、时延能耗建模、�
 math: true
 ShowToc: true
 TocOpen: true
-cover:
-  image: 'images/cover-scheduling.png'
-  alt: '多无人机协同计算调度封面图'
+cover: 'images/cover-scheduling.png'
 ---
 
 无人机低空应急感知不是单机问题。单架 UAV 可能算力不足、电量紧张、视角受遮挡，或者通信链路不稳定。更现实的系统应当允许多个节点协同观测、协同推理，并在必要时把部分计算卸载给算力富余的节点。
@@ -231,3 +229,5 @@ l_t^\star = \sum_{i\in\mathcal C_t}\omega_{i,t}l_{i,t}, \qquad p_t^\star=\operat
 2. 系统层：紧凑状态和可切分后缀让低带宽协同推理更可行。
 
 如果把节点内融合和节点间调度放在一起看，UAVFusion-Mamba 更像是一个“感知-通信-计算”联合设计问题，而不是单纯的网络结构改进。
+
+

@@ -4,5 +4,7 @@ resources/_gen/
 .tools/
 logs/
 image/
+.env.local
+.env*.local
 .DS_Store
 Thumbs.db

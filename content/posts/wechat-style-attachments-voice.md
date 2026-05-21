@@ -1,4 +1,4 @@
----
+﻿---
 title: '微信式附件与语音输入复现'
 date: 2026-05-18T09:40:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '复现聊天页底部 + 附件面板、长按录音、文本附件解�
 ShowToc: true
 TocOpen: true
 mermaid: true
-cover:
-  image: 'images/cover-wechat-attachments-voice.svg'
-  alt: '微信式附件与语音输入封面图'
+cover: 'images/cover-wechat-attachments-voice.svg'
 ---
 
 _复现聊天页底部 `+` 附件面板、长按录音、文本附件解析和语音转文字链路。_
@@ -139,3 +137,5 @@ node cloudfunctions/xiaozhiProxy/test.js
 - 长按录音松开后，语音转写文本进入聊天
 - 转写失败时显示可读错误，不丢失语音附件
 - 换用户后看不到前一个用户的附件历史
+
+

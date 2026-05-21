@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="小智chat app icon">
+  <defs>
+    <clipPath id="rounded">
+      <rect width="1024" height="1024" rx="228"/>
+    </clipPath>
+    <radialGradient id="shine" cx="28%" cy="18%" r="66%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.38"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="104" x2="920" y1="920" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#05251f"/>
+      <stop offset="0.5" stop-color="#10d79b"/>
+      <stop offset="1" stop-color="#f0fff9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#001712" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <image href="xiaozhi-chat-icon-bg.png" width="1024" height="1024" preserveAspectRatio="xMidYMid slice"/>
+    <rect width="1024" height="1024" fill="#041210" opacity="0.1"/>
+    <rect width="1024" height="1024" fill="url(#shine)"/>
+    <g filter="url(#shadow)">
+      <path d="M512 214c158 0 286 103 286 230S670 674 512 674c-26 0-51-3-75-8l-116 73 28-109c-75-42-123-109-123-186 0-127 128-230 286-230Z" fill="#f7fffb" opacity="0.95"/>
+      <path d="M392 443c42-72 91-108 149-108 48 0 82 31 82 78 0 61-52 108-119 108-45 0-83-18-112-53" fill="none" stroke="#0aa878" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="407" cy="443" r="18" fill="#0aa878"/>
+      <circle cx="541" cy="335" r="18" fill="#0aa878"/>
+      <circle cx="651" cy="435" r="18" fill="#0aa878"/>
+    </g>
+    <rect x="18" y="18" width="988" height="988" rx="212" fill="none" stroke="url(#edge)" stroke-opacity="0.42" stroke-width="10"/>
+  </g>
+</svg>

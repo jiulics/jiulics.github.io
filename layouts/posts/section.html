@@ -1,0 +1,25 @@
+{{- define "main" -}}
+  {{- $pageSize := 0 -}}
+  {{- with $.Site.Params.paginate.post -}}
+    {{- $pageSize = . -}}
+  {{- end -}}
+  {{- $paginator := "" -}}
+  {{- if gt $pageSize 0 -}}
+    {{- $paginator = .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) $pageSize -}}
+  {{- else -}}
+    {{- $paginator = .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) -}}
+  {{- end -}}
+
+  <header class="page-header page-card">
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}
+      <div class="post-description">{{ . }}</div>
+    {{- end }}
+  </header>
+
+  {{- range $index, $page := $paginator.Pages -}}
+    {{- partial "post.html" (dict "index" $index "ctx" . "page" $page) -}}
+  {{- end -}}
+
+  {{- partial "pagination.html" . -}}
+{{- end -}}

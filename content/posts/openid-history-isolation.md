@@ -1,4 +1,4 @@
----
+﻿---
 title: '用 openid 做用户登录、历史隔离与跨设备同步'
 date: 2026-05-18T09:30:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '复现小智小程序如何避免所有用户看到同一份聊天历�
 ShowToc: true
 TocOpen: true
 mermaid: true
-cover:
-  image: 'images/cover-openid-history-isolation.svg'
-  alt: 'openid 历史隔离封面图'
+cover: 'images/cover-openid-history-isolation.svg'
 ---
 
 _复现小智小程序如何避免所有用户看到同一份聊天历史。_
@@ -109,3 +107,5 @@ node cloudfunctions/xiaozhiProxy/test.js
 - 登录回 A 后 A 的历史恢复
 - 云数据库中每条会话都有 `openid`
 - 前端传入的任何用户 ID 都不能改变云端归属
+
+

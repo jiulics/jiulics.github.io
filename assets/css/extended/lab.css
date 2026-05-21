@@ -663,7 +663,7 @@ a {
     overflow: hidden;
     background:
         linear-gradient(120deg, rgba(12, 14, 20, 0.88), rgba(12, 14, 20, 0.54)),
-        var(--post-cover, url('/images/hero-lab-v2.png'));
+        var(--post-cover, url('/images/generated/blog-bg.png'));
     background-position: center;
     background-size: cover;
 }

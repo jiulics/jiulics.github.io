@@ -1,4 +1,4 @@
----
+﻿---
 title: '语义压缩再卸载：为什么无人机不能直接传原图'
 date: 2026-05-11T20:20:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '从通信负载和模块切分角度说明：多无人机协同推理�
 math: true
 ShowToc: true
 TocOpen: true
-cover:
-  image: 'images/cover-semantic-compression.png'
-  alt: '无人机语义压缩与卸载封面图'
+cover: 'images/cover-semantic-compression.png'
 ---
 
 多无人机协同推理里有一个看似自然、实际上很危险的想法：算力不够，就把原始图像传给别的节点或云端。这个方案在纸面上简单，但在低空应急场景里很容易失败。高分辨率 RGB-IR 图像数据量大，链路抖动强，多个节点同时上传还会产生信道竞争。结果是，模型还没开始推理，时延预算已经被通信吃掉了。
@@ -127,3 +125,5 @@ D_i(t)=D_i^{loc}(t)+I_i^{off}(t)\left(D_i^{trans}(t)+D_{o_i(t)}^{off}(t)\right)
 3. 调度器根据链路、算力、队列和模态质量选择切分点。
 
 这也是 UAVFusion-Mamba 里模块化设计的系统意义：感知模型不只是为了提高精度，还要让任务具备可调度性。
+
+

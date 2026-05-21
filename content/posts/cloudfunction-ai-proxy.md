@@ -1,4 +1,4 @@
----
+﻿---
 title: '用云函数安全代理聊天、生图和语音转写'
 date: 2026-05-18T09:20:00+08:00
 draft: false
@@ -8,9 +8,7 @@ summary: '复现 xiaozhiProxy 如何把小程序前端请求转换为上游 AI �
 ShowToc: true
 TocOpen: true
 mermaid: true
-cover:
-  image: 'images/cover-cloudfunction-ai-proxy.svg'
-  alt: '云函数 AI 代理封面图'
+cover: 'images/cover-cloudfunction-ai-proxy.svg'
 ---
 
 _复现 `xiaozhiProxy` 如何把小程序前端请求转换为上游 AI 服务调用。_
@@ -125,3 +123,5 @@ node cloudfunctions/xiaozhiProxy/test.js
 - 图片成功时返回 HTTPS URL
 - 语音缺少 Key 时返回明确错误
 - 文本附件超过限制时返回不可读状态
+
+
