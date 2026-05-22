@@ -6,5 +6,10 @@ logs/
 image/
 .env.local
 .env*.local
+.tmp-*
+.codebuddy/
+.kilo/
+legacy/
+static/images/cursor/
 .DS_Store
 Thumbs.db
