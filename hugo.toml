@@ -22,12 +22,19 @@ copyright = '© 2026 jiulics'
   banner = 'images/generated/blog-bg.png'
   avatar = 'avatar.jpg'
   reimu_cursor = false
+  keywords = ['多智能体协作', '强化学习', '无人机', '低空城市应急', '多模态融合', '协同计算']
 
   [params.preloader]
     enable = false
+
   [params.firework]
     enable = false
-  keywords = ['多智能体协作', '强化学习', '无人机', '低空城市应急', '多模态融合', '协同计算']
+
+  [params.injector]
+    head_end = '''
+<link rel="icon" href="/favicon.ico?v=avatar-20260522" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico?v=avatar-20260522">
+'''
 
   [params.summary]
     enable = true
