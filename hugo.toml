@@ -32,6 +32,7 @@ copyright = '© 2026 jiulics'
 
   [params.injector]
     head_end = '''
+<link rel="stylesheet" href="/css/lab.css?v=20260523-avatar-top">
 <link rel="icon" href="/favicon.ico?v=avatar-20260522" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico?v=avatar-20260522">
 '''
