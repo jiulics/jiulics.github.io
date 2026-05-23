@@ -6,8 +6,8 @@ draft: false
 tags: ['不完全多模态学习', '多模态融合', '缺失模态', '可信决策']
 categories: ['多模态融合']
 summary: '从缺失模态设定、技术路线到可信决策，梳理不完全多模态学习的问题框架。'
-banner: 'images/generated/blog-bg.png'
-cover: 'images/generated/blog-bg.png'
+banner: 'images/generated/incomplete-multimodal-bg.png'
+cover: 'images/generated/incomplete-multimodal-bg.png'
 ---
 # 不完全多模态学习：当模型看不全世界时，如何还能做出可靠判断？
 
